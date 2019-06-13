@@ -37,15 +37,15 @@ def Downlord_img(info):
 	for i in info:
 		url = i['url']
 		name = i['name']
-		if not os.path.exists("E:/Downlord/美女图片/"+name):
-			os.makedirs("E:/Downlord/美女图片/"+name)
+		if not os.path.exists("E:/Downlord/图片/"+name):
+			os.makedirs("E:/Downlord/图片/"+name)
 		img = get_img(url)
 		print('开始下载%s的图片...'%name)
 		k = 0
 		for j in img:
 			try:
 				print("****** 正在下载第%d张图片 ******"%(k+1))
-				urllib.request.urlretrieve(j, 'E:/Downlord/美女图片/%s/%s%d.jpg'%(name, name, k+1))
+				urllib.request.urlretrieve(j, 'E:/Downlord/图片/%s/%s%d.jpg'%(name, name, k+1))
 				k += 1
 			except:
 				print("****** 第%d张下载失败 ******"%(k+1))
@@ -58,7 +58,7 @@ def main():
 main()
 
 '''
-url = "https://www.27270.com/ent/meinvtupian/"
+url = ""
 res = requests.get(url)
 soup = BeautifulSoup(res.text)
 html = soup.find_all('a', class_='MMPic')
