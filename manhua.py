@@ -54,13 +54,12 @@ def DownlordImg(name, img):
 
 def main():
 	'''
-	url = "http://m.xiaoxiaodaoming.com/gongkou/38960.html"
+	url = '''你的网页链接'''
 	print('正在获取图片地址...')
 	name, img = get_img(url)
 	img = DataFrame({"img":img})
-	img.to_csv('E:/Downlord/漫画/邪恶漫画大全之朋友的姐姐工口漫画.csv'%name)
+	img.to_csv('E:/Downlord/漫画/{文件夹}/{名字}.csv')
 	'''
-	name = "内々けやき漫画：连接的人妻人妻C 3349上线的连工口漫画"
 	new_img = pd.read_csv('E:/Downlord/漫画/%s.csv'%name, engine='python').values
 	DownlordImg(name, new_img)
 
